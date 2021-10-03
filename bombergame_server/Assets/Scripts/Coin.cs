@@ -24,10 +24,11 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         var player = collider.GetComponent<PlayerController>();
-        if (player != null)
+        if (player != null && !player.IsDeath)
         {
             player.GetCoin();
             Delete();
         }
+      
     }
 }
